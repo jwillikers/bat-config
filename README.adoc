@@ -1,0 +1,117 @@
+= bat Config
+Jordan Williams <jordan@jwillikers.com>
+:experimental:
+:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:bat: https://github.com/sharkdp/bat[bat]
+
+My configuration for {bat}, a cat(1) clone with syntax highlighting and Git integration.
+
+== Usage
+
+This repository contains the configuration files for {bat}.
+This file is synchronized using this Git repository.
+The following instructions detail how to use and sync this repository.
+
+== Set up
+
+. Install the `bat` package.
++
+[,sh]
+----
+sudo rpm-ostree install bat
+----
+
+. Reboot for the changes to take effect.
++
+[,sh]
+----
+sudo systemctl reboot
+----
+
+=== Install
+
+Install these settings with the following instructions.
+
+. Clone this repository.
++
+[,sh]
+----
+git -C ~/Projects clone git@github.com:jwillikers/bat-config.git
+----
+
+. Create the _~/.config/bat_ directory.
++
+[,sh]
+----
+mkdir ~/.config/bat
+----
+
+. Copy the configuration file in the `bat` directory to the bat configuration directory.
++
+[,sh]
+----
+cp ~/Projects/bat-config/bat/config ~/.config/bat
+----
+
+=== Update
+
+To update the settings in this repository from an existing installation, follow these steps.
+
+. If you haven't already done so, clone this repository.
++
+[,sh]
+----
+git -C ~/Projects clone git@github.com:jwillikers/bat-config.git
+----
+
+. Copy the configuration file `~/.config/bat/config` to this repository.
++
+[,sh]
+----
+cp ~/.config/bat/config ~/Projects/bat-config/bat/
+----
+
+. Stage the updated file.
++
+[,sh]
+----
+git -C ~/Projects/bat-config add -A
+----
+
+. Commit.
++
+[,sh]
+----
+git -C ~/Projects/bat-config commit -m "Update configuration putting all others to shame"
+----
+
+. Push the changes back to the central repository.
++
+[,sh]
+----
+git -C ~/Projects/bat-config push
+----
+
+== Code of Conduct
+
+Please refer to the project's link:CODE_OF_CONDUCT.adoc[Code of Conduct].
+
+== License
+
+This repository is licensed under the https://www.gnu.org/licenses/gpl-3.0.html[GPLv3].
+Please refer to the bundled link:LICENSE.adoc[license].
+
+== Copyright
+
+© 2023 Jordan Williams
+
+== Authors
+
+mailto:{email}[{author}]
